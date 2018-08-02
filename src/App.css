@@ -1,0 +1,17 @@
+/*
+Comment Block CSS
+*/
+.App {
+  text-align: center;
+  margin: 70px auto;
+  float: right;
+  width: 50%;
+}
+.TabChild {
+  /* float: right; */
+  display: inline-block;
+  clear: none;
+  width: 5%;
+  margin: 0;
+  padding: 0;
+}
