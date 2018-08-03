@@ -12,7 +12,7 @@ class TabChild extends Component {
     }
     handleClick() {
       this.setState(prevState => ({
-        isToggleOn: !prevState.isToggleOn
+        isOn: !prevState.isOn
       }));
       alert(this.state.isOn +'\n' +this.state.link)
     }
