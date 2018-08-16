@@ -12,7 +12,7 @@ function scrapeURL(node){
   let end = node.innerHTML.search(eSub) - 1;
   return node.innerHTML.substring(start, end);
 }
-// Render single action arrow 
+// Render single action arrow
 function createTabDiv (div, node){
   div.id = 'injLink' + count;
   let divContainer = document.createElement('div');
@@ -24,16 +24,19 @@ function createTabDiv (div, node){
 // Render Arrows for each displayed Link
 const divrCollections = document.querySelectorAll('div.r');
 let count = 0;
+const linksArr = [];
 for (let item of divrCollections) {
     // If link does not have cache/similar action arrow
     if (item.querySelector('span') == null) {
       let buttonDiv = item.querySelector('cite.iUh30')
       createTabDiv(buttonDiv, item);
+      links.push(scrapeURL(item.innerHTML));
       count +=1;
     }
     else {
       let buttonDiv = item.querySelector('span');
       createTabDiv(buttonDiv, item);
+      links.push(scrapeURL(item.innerHTML));
       count +=1;
     }
 }
@@ -42,4 +45,4 @@ const commentsDiv = document.getElementById('rcnt');
 const app = document.createElement('div');
 app.id = 'root';
 if (commentsDiv) commentsDiv.prepend(app);
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App links={linksArr} />, document.getElementById('root'));

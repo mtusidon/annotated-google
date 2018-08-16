@@ -5,12 +5,14 @@ class Comment extends Component {
   constructor(props){
     super(props);
     this.state = {
+      link: "",
+      id: "",
       author: "Todd Howard",
-      score: 0,
-      text: "It just works",
       timeStamp: "",
       parent: null,
       children: null,
+      score: 0,
+      text: "It just works",
       classification: "meh",
       edited: false,
       collapsed: false,
